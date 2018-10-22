@@ -1,0 +1,21 @@
+{
+  "name": "deep-learn-tensorflow",
+  "version": "1.0.0",
+  "description": "This is an example for tesorflow with cnn and rnn.",
+  "main": "index.js",
+  "scripts": {
+    "cnn": "python cnn.py",
+    "rnn": "python rnn.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/explooosion/deep-learn-tensorflow.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/explooosion/deep-learn-tensorflow/issues"
+  },
+  "homepage": "https://github.com/explooosion/deep-learn-tensorflow#readme"
+}

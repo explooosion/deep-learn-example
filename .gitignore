@@ -1,0 +1,4 @@
+node_modules
+MNIST_data
+MNIST-data
+*.log
