@@ -131,7 +131,7 @@ sess.run(tf.initialize_all_variables())
 for i in range(1000):
     batch_xs, batch_ys = mnist.train.next_batch(100)
     sess.run(train_step, feed_dict={
-             xs: batch_xs, ys: batch_ys, keep_prob: 0.5})
+             xs: batch_xs, ys: batch_ys, keep_prob: 0.5})  # 0.5 dropout
     if i % 100 == 0:
         print("Iter:" + str(i) + ", Accuracy:", compute_accuracy(
             mnist.test.images, mnist.test.labels))
