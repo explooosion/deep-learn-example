@@ -1,5 +1,7 @@
 node_modules
-MNIST_data
-MNIST-data
+MNIST/MNIST_data
+MNIST/MNIST-data
+checkpoints
 *.log
 ~*.*
+.DS_Store
