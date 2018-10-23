@@ -14,11 +14,11 @@ mnist = input_data.read_data_sets('./MNIST_data', one_hot=True)
 ### 顯示資料筆數 ###
 
 # Train 55,000
-print(len(mnist.train.labels))
+print('train', len(mnist.train.labels))
 # Validation
-print(len(mnist.validation.labels))
+print('validation', len(mnist.validation.labels))
 # Test  10,000
-print(len(mnist.test.labels))
+print('test', len(mnist.test.labels))
 
 ### 建立常用函式 ###
 
@@ -51,7 +51,6 @@ def bias_variable(shape):
 
 
 def conv2d(x, W):
-    print('conv2d', tf.nn.conv2d(x, W, strides=[1, 1, 1, 1], padding='SAME'))
     return tf.nn.conv2d(x, W, strides=[1, 1, 1, 1], padding='SAME')
 
 # 最大池化
@@ -128,7 +127,7 @@ train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
 
 sess = tf.Session()
 sess.run(tf.initialize_all_variables())
-for i in range(1000):
+for i in range(1001):
     batch_xs, batch_ys = mnist.train.next_batch(100)
     sess.run(train_step, feed_dict={
              xs: batch_xs, ys: batch_ys, keep_prob: 0.5})  # 0.5 dropout
