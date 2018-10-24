@@ -8,10 +8,10 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 tf.logging.set_verbosity(tf.logging.ERROR)
 
 # 載入資料集
-mnist = tf.keras.datasets.mnist
+fashion_mnist = tf.keras.datasets.fashion_mnist
 
 # 取出訓練與測試集資料
-(x_train, y_train), (x_test, y_test) = mnist.load_data()
+(x_train, y_train), (x_test, y_test) = fashion_mnist.load_data()
 
 # 將圖片數值從原本的 0~255 正規化成 0~1
 x_train, x_test = x_train / 255.0, x_test / 255.0
@@ -42,6 +42,7 @@ model.compile(optimizer='adam',
 
 # 開始訓練
 model.fit(x_train, y_train, validation_split=0.2, epochs=5, batch_size=300)
+
 # model.save('./my_model.h5')
 
 # 儲存訓練完的檢查點

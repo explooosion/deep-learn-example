@@ -9,10 +9,10 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 tf.logging.set_verbosity(tf.logging.ERROR)
 
 # 數字 1 ~ 10 資料集
-mnist = tf.keras.datasets.mnist
+fashion_mnist = tf.keras.datasets.fashion_mnist
 
 # 取出訓練與測試集資料
-(x_train, y_train), (x_test, y_test) = mnist.load_data()
+(x_train, y_train), (x_test, y_test) = fashion_mnist.load_data()
 
 # 資料轉換
 x_train = x_train.reshape(x_train.shape[0], -1, 1).astype('float32')
@@ -46,5 +46,5 @@ model.compile(loss='categorical_crossentropy',
 model.fit(x_train, y_train, validation_split=0.2, epochs=5, batch_size=300)
 
 # 驗證模型
-# loss, acc = model.evaluate(x_test, y_test)
-# print('Testing Accurakcy: ', str(acc))
+loss, acc = model.evaluate(x_test, y_test)
+print('Testing Accurakcy: ', str(acc))
