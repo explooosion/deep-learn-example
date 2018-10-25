@@ -46,5 +46,5 @@ model.compile(loss='categorical_crossentropy',
 model.fit(x_train, y_train, validation_split=0.2, epochs=5, batch_size=300)
 
 # 驗證模型
-# loss, acc = model.evaluate(x_test, y_test)
-# print('Testing Accurakcy: ', str(acc))
+loss, acc = model.evaluate(x_test, y_test)
+print('Testing Accurakcy: ', str(acc))

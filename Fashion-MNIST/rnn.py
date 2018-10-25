@@ -8,7 +8,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 # 關閉不必要的 Tensorflow Warning
 tf.logging.set_verbosity(tf.logging.ERROR)
 
-# 數字 1 ~ 10 資料集
+# 資料集
 fashion_mnist = tf.keras.datasets.fashion_mnist
 
 # 取出訓練與測試集資料

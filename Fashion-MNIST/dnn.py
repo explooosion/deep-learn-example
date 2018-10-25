@@ -31,22 +31,13 @@ model.add(tf.keras.layers.Dense(10, activation=tf.nn.softmax))  # 全連接層
 #     tf.keras.layers.Dense(10, activation=tf.nn.softmax)    # 全連接層
 # ])
 
-# optimizer=tf.train.AdamOptimizer(0.001)
-# optimizer=tf.train.RMSPropOptimizer(0.01)
+# 定義模型訓練方式
 model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
-# 載入訓練完的檢查點
-# model.load_weights('./checkpoints/my_checkpoint')
-
 # 開始訓練
 model.fit(x_train, y_train, validation_split=0.2, epochs=5, batch_size=300)
-
-# model.save('./my_model.h5')
-
-# 儲存訓練完的檢查點
-# model.save_weights('./checkpoints/my_checkpoint')
 
 loss, acc = model.evaluate(x_test, y_test)
 

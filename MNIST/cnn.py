@@ -61,14 +61,10 @@ model.add(tf.keras.layers.Dropout(0.5))  # 丟失率
 # (softmax 函數可以將神經元的輸出轉換成每一個數字的機率):
 model.add(tf.keras.layers.Dense(10, activation=tf.nn.softmax))  # 全連接層
 
-# 定義訓練並進行訓練
+# 定義模型訓練方式
 model.compile(optimizer='adam',
               loss='categorical_crossentropy',
               metrics=['accuracy'])
-
-# 查看模型描述
-# model.summary()
-# print("")
 
 # 開始訓練
 model.fit(x_train, y_train, validation_split=0.2, epochs=5, batch_size=300)
